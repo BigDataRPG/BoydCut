@@ -2,21 +2,24 @@ import tensorflow as tf
 import pandas as pd
 import pickle
 import pythainlp
-
+import pathlib
 
 def load_word_embbed():
-    df_embbed = pd.read_pickle("BoydCut/utility_data/word2vec_scb_orchid.pkl")
+    HERE = pathlib.Path(__file__).parent
+    df_embbed = pd.read_pickle(f"{HERE}/utility_data/word2vec_scb_orchid.pkl")
     print("Load word2vec done")
     return df_embbed
 
 def load_pos_index():
-    with open("BoydCut/utility_data/pos_idx_dict.pkl", 'rb') as handle:
+    HERE = pathlib.Path(__file__).parent
+    with open(f"{HERE}/utility_data/pos_idx_dict.pkl", 'rb') as handle:
         unq_pos = pickle.load(handle)
         print("Load pos done")
     return unq_pos
 
 def load_word_file():
-    df_word = pd.read_csv("BoydCut/utility_data/wordidx_scb_orchid.csv")
+    HERE = pathlib.Path(__file__).parent
+    df_word = pd.read_csv(f"{HERE}/utility_data/wordidx_scb_orchid.csv")
     print("Load word file done")
     return df_word
 
@@ -97,17 +100,18 @@ def check_sentence_segment(_para_ls, _label_ls):
 
 ## Mockup Text
 def test_text(version=1):
+    HERE = pathlib.Path(__file__).parent
     if version==1:
-        f = open("BoydCut/utility_data/longtext_v1", 'r', encoding="utf8")
+        f = open(f"{HERE}/utility_data/longtext_v1", 'r', encoding="utf8")
         long_text = f.read()
         return long_text
     else:
-        f = open("BoydCut/utility_data/longtext_v2", 'r', encoding="utf8")
+        f = open(f"{HERE}/utility_data/longtext_v2", 'r', encoding="utf8")
         long_text = f.read()
         return long_text
 
 ## Load Model
 def load_model():
-    PATH_SAVE_MODEL = "BoydCut/model/boydcut_model"
+    HERE = pathlib.Path(__file__).parent
     print("Load model done")
-    return tf.keras.models.load_model(PATH_SAVE_MODEL, compile=False)
+    return tf.keras.models.load_model(f"{HERE}/model/boydcut_model", compile=False)
