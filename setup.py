@@ -20,8 +20,9 @@ setuptools.setup(
                       "pythainlp[artagger]"],
     long_description_content_type="text/markdown",
     include_package_data=True,
-    packages=setuptools.find_packages(),
+    packages=["BoydCut", "BoydCut.model", "BoydCut.utility_data"],
     classifiers=[
+        "Natural Language :: Thai",
         "Programming Language :: Python :: 3.6",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
