@@ -1,6 +1,12 @@
+# BoydCut: Thai Sentence Segmenter
+> Bidirectional LSTM-CNN Model for Thai Sentence Segmenter
+
+
+
 # Development Status
 This project is the part of my Thesis in Master's degree at Big Data Engineering, CITE, Dhurakij Pundij University
 https://cite.dpu.ac.th/bigdata/
+
 
 **My Advisor**
 - Asst. Prof. Dr. Duangjai Jitkongchuen
