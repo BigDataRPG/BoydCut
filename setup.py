@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="BoydCut",
-    version="0.0.5",
+    version="0.0.6",
     author="Sorratat Sirirattanajakarin",
     author_email="sorratat.sirirattanajakarin@gmail.com",
     keywords = ['NLP', 'THAI', 'SENTENCE'],
     description="Thai Sentence Segmenter",
     url = 'https://github.com/BigDataRPG/BoydCut',
-    download_url="https://github.com/BigDataRPG/BoydCut/archive/v_0.0.4.tar.gz",
+    download_url="https://github.com/BigDataRPG/BoydCut/archive/v_0.0.6.tar.gz",
     long_description=long_description,
     install_requires=["numpy",
                       "pandas",
