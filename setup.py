@@ -14,7 +14,7 @@ setuptools.setup(
     long_description=long_description,
     install_requires=["numpy",
                       "pandas",
-                      "tensorflow=>2.0",
+                      "tensorflow>=2.0",
                       "pythainlp[ner]",
                       "pythainlp[artagger]"],
     long_description_content_type="text/markdown",
