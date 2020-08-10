@@ -91,11 +91,24 @@ def get_pos(_sentence_ls):
 
 def check_sentence_segment(_para_ls, _label_ls):
     n_para = len(_para_ls)
-    for _word, _label in zip(_para_ls, _label_ls[:n_para]):
+    sentences_ls = []
+    buffer_ls =[]
+    for _idx, _word, _label in zip(range(n_para), _para_ls, _label_ls[:n_para]):
         if _label == 0:
             print(_word, end="|", flush=True)
+            buffer_ls.append(_word)
+            buffer_ls.append("|")
+            if _idx==n_para-1:
+                sentence = "".join(buffer_ls)
+                sentences_ls.append(sentence)
+                buffer_ls = []
         elif _label == 1:
             print(_word, end="\n", flush=True)
+            sentence = "".join(buffer_ls)
+            sentences_ls.append(sentence)
+            buffer_ls = []
+
+    return sentences_ls
 
 
 ## Mockup Text
@@ -113,5 +126,6 @@ def test_text(version=1):
 ## Load Model
 def load_model():
     HERE = pathlib.Path(__file__).parent
+    loaded_model = tf.keras.models.load_model(f"{HERE}/model/boydcut_model", compile=False)
     print("Load model done")
-    return tf.keras.models.load_model(f"{HERE}/model/boydcut_model", compile=False)
+    return loaded_model

@@ -1,2 +1,2 @@
-include BoydCut/model/*
+recursive-include BoydCut/model *
 include BoydCut/utility_data/*
