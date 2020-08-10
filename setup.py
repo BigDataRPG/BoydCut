@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="BoydCut",
-    version="0.0.6",
+    version="0.0.7",
     author="Sorratat Sirirattanajakarin",
     author_email="sorratat.sirirattanajakarin@gmail.com",
     keywords = ['NLP', 'THAI', 'SENTENCE'],
@@ -21,6 +21,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     include_package_data=True,
     packages=["BoydCut", "BoydCut.model", "BoydCut.utility_data"],
+    package_data={'BoydCut': ['model/**/*', 'utility_data/**/*']},
     classifiers=[
         "Natural Language :: Thai",
         "Programming Language :: Python :: 3.6",
