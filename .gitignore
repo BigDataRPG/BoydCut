@@ -8,3 +8,5 @@ main.py
 build/
 dist/
 .idea
+BoydCut/__pycache__
+*.pyc
