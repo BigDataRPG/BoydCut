@@ -13,7 +13,7 @@ setuptools.setup(
     keywords = ['NLP', 'THAI', 'SENTENCE'],
     description="Thai Sentence Segmenter",
     url = 'https://github.com/BigDataRPG/BoydCut',
-    download_url="https://github.com/BigDataRPG/BoydCut/archive/v_0.0.1_dev.tar.gz",
+    download_url="https://github.com/BigDataRPG/BoydCut/archive/v_0.0.6-dev.tar.gz",
     long_description=long_description,
     install_requires=["pythainlp[ner]",
                       "pythainlp[artagger]"],
