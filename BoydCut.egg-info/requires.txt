@@ -1,0 +1,2 @@
+pythainlp[ner]
+pythainlp[artagger]

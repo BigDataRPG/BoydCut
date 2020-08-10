@@ -1,0 +1,6 @@
+.BoydCut.egg-info
+.setup.py
+.main.py
+.build
+.dist
+.idea
