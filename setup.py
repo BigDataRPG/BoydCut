@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.5",
     author="Sorratat Sirirattanajakarin",
     author_email="sorratat.sirirattanajakarin@gmail.com",
-    keywords = ['NLP', 'THAI', 'KEYWORDS'],
+    keywords = ['NLP', 'THAI', 'SENTENCE'],
     description="Thai Sentence Segmenter",
     url = 'https://github.com/BigDataRPG/BoydCut',
     download_url="https://github.com/BigDataRPG/BoydCut/archive/v_0.0.4.tar.gz",
