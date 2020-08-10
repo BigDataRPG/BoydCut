@@ -2,6 +2,10 @@
 This project is the part of my Thesis in Master's degree at Big Data Engineering, CITE, Dhurakij Pundij University
 https://cite.dpu.ac.th/bigdata/
 
+**My Advisor**
+- Asst. Prof. Dr. Duangjai Jitkongchuen
+- Asst. Prof. Dr. Peerasak Intarapaiboon
+
 
 # Requirements
 - Tensorflow 2.0+
