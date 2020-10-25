@@ -20,7 +20,7 @@ joblib==0.16.0
 Keras-Applications
 Keras-Preprocessing==1.1.0
 Markdown==3.1.1
-mkl-fft==1.1.0
+mkl-fft==1.0.6
 mkl-random==1.1.0
 mkl-service==2.3.0
 numpy
