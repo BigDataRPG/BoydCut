@@ -24,8 +24,19 @@ https://cite.dpu.ac.th/bigdata/
 - pip install pythainlp
 
 ## How to use and Examples
+- pip install BoydCut
 - Version 1.0.0
+- [Notebook Example](https://colab.research.google.com/drive/1uMssc6RQQTeDhsja_aOWwLRl9Bjk31Qc?usp=sharing)
 ```
+!pip install BoydCut==1.0.0
+from BoydCut.utility import *
+import tensorflow as tf
+import pythainlp
+import os
+
+import numpy as np
+import pandas as pd
+
 boydcut = BoydCut()
 sent_ls = boydcut.sentenize("ประเทศฝรั่งเศสแผ่นดินใหญ่ทอดตัวตั้งแต่ทะเลเมดิเตอร์\
                                         เรเนียนจนถึงช่องแคบอังกฤษและทะเลเหนือ")
