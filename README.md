@@ -2,7 +2,6 @@
 > Bidirectional LSTM-CNN Model for Thai Sentence Segmenter
 
 
-
 # Development Status
 This project is the part of my Thesis in Master's degree at Big Data Engineering, CITE, Dhurakij Pundij University
 https://cite.dpu.ac.th/bigdata/
@@ -16,22 +15,47 @@ https://cite.dpu.ac.th/bigdata/
 # Requirements
 - Tensorflow 2.0+
 - Python 3.6.x
-- pip install -r requirements.txt
+- pip install -r requirements
+> if pip install -r requirements not work please follow Installation steps
 
-## Example Results
+## Installation steps
+- pip install numpy pandas tensorflow
+- pip install deepcut
+- pip install pythainlp
+
+## How to use and Examples
+- Version 1.0.0
 ```
-handling_inference(loaded_model, "ประเทศฝรั่งเศสแผ่นดินใหญ่ทอดตัวตั้งแต่ทะเลเมดิเตอร์\
+boydcut = BoydCut()
+sent_ls = boydcut.sentenize("ประเทศฝรั่งเศสแผ่นดินใหญ่ทอดตัวตั้งแต่ทะเลเมดิเตอร์\
                                         เรเนียนจนถึงช่องแคบอังกฤษและทะเลเหนือ")
+for sent in sent_ls:
+    print(sent)
 
-> ประเทศฝรั่งเศส|แผ่นดิน|ใหญ่
-> ทอดตัว|ตั้งแต่|ทะเลเมดิเตอร์เรเนียน|จนถึง|ช่อง|แคบ
-> อังกฤษ|และ|ทะเล|เหนือ|
+> <B-CLS>ประเทศฝรั่งเศส|แผ่นดิน|ใหญ่|ทอด|ตัว|ตั้งแต่|ทะเลเมดิเตอร์เรเนียน|จนถึง|ช่อง|แคบ<E-CLS>
+> <B-CLS>อังกฤษ|และ|ทะเล|เหนือ<E-CLS>
 
-handling_inference(loaded_model, "เศษฝรั่งได้ชื่อว่าเป็นประเทศที่มีการประท้วงบ่อยและเยอะที่สุด")
 
-> เศษ|ฝรั่ง|ได้|ชื่อ|ว่า|เป็น|ประเทศ|ที่|มี
-> การ|ประท้วง|บ่อย|และ|เยอะ|ที่สุด|
+boydcut = BoydCut()
+sent_ls = boydcut.sentenize(['ประเทศฝรั่งเศส','แผ่นดิน','ใหญ่','ทอดตัว','ตั้งแต่',
+                            'ทะเลเมดิเตอร์เรเนียน','จนถึง','ช่อง','แคบ',
+                            'อังกฤษ','และ','ทะเล','เหนือ'], _tokenize=False)
+for sent in sent_ls:
+    print(sent)
+
+> <B-CLS>ประเทศฝรั่งเศส|แผ่นดิน|ใหญ่|ทอด|ตัว|ตั้งแต่|ทะเลเมดิเตอร์เรเนียน|จนถึง|ช่อง|แคบ<E-CLS>
+> <B-CLS>อังกฤษ|และ|ทะเล|เหนือ<E-CLS>
 ```
+
+## Limitation 
+- Document feeding is not available yet !
+- Max Word for feeding: 200 words / paragraph
+- Please use "\n" for decrease size of paragraph
+- Results: [sentence1, sentence2, sentence3,..., sentenceN]
+
+## Dependency
+- POS apply pythainlp.tag.pos_tag(_sentence_ls, corpus="orchid") 
+- Tokenization apply pythainlp.tokenize.word_tokenize(_text_ls, engine="deepcut")
 
 
 
@@ -51,3 +75,5 @@ Sorratat Sirirattanajakarin (Boyd)
 Please make sure to cite the paper if you use BoydCut for your research ^^:
 >**BoydCut: Bidirectional LSTM-CNN Model for Thai Sentence Segmenter** 
 *S. Sirirattanajakarin, D. Jitkongchuen, P. Intarapaiboon* 2020 1st International Conference on Big Data Analytics and Practices (IBDAP)
+
+
